@@ -1,0 +1,57 @@
+import java.awt.*;
+import java.util.Scanner;
+
+// Création de la calsse 
+class Personne {
+    // les attributs
+    String nom;
+    String prenom;
+    float taille;
+    int age;
+
+
+    // Le constructeur: permet d'initialiser les attributs d'une classe, en java il doit porter le même nom que la classe et il ne retourne rien (même void)
+    Personne(String nom, String prenom, float taille, int age){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.taille = taille;
+        this.age = age;
+    }
+
+    void marcher(){
+        System.out.println(this.prenom+" est en train de marcher ");
+    }
+
+    void dormir(){
+        System.out.println(this.prenom+": Grrrr grrrr ...");
+    }
+
+    void saluer(Personne p){
+        System.out.println(this.prenom+" a suler "+p.prenom);
+    }
+
+    void sePresenter(){
+        System.out.println("Je m'appelle "+nom+" "+prenom+
+                ", j'ai "+age+" ans, et je mesure "+taille);
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Personne mamadou = new Personne("Camara","Mamadou",1.80F,19);
+        Personne salamata = new Personne("Diallo","Salamata",1.6F,18);
+        mamadou.sePresenter();
+        salamata.sePresenter();
+        mamadou.saluer(salamata);
+
+
+        mamadou.marcher();
+        salamata.marcher();
+
+
+    }
+
+
+}
